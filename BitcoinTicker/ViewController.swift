@@ -9,9 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let networkController = NetworkController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        networkController.getCurrentCoinData {
+          print(self.networkController.coins[0])
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
