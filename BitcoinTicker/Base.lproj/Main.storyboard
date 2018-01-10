@@ -10,21 +10,50 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Dashboard View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BitcoinTicker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DashboardViewController" customModule="BitcoinTicker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YcJ-mg-VoH">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dashboardCell" id="9z7-CE-pM0" customClass="DashboardTableViewCell" customModule="BitcoinTicker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9z7-CE-pM0" id="2Q5-OU-4Lt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="GhL-9V-rYV"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="bnH-Vm-0pq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YcJ-mg-VoH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JoN-iw-9Wi"/>
+                            <constraint firstItem="YcJ-mg-VoH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mex-ml-wLv"/>
+                            <constraint firstItem="YcJ-mg-VoH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rWa-Kg-MMS"/>
+                            <constraint firstItem="YcJ-mg-VoH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="vbW-ee-kpC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="diE-2D-ELj"/>
+                    <connections>
+                        <outlet property="tableView" destination="YcJ-mg-VoH" id="PrC-xZ-mEg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="250" y="18"/>
+            <point key="canvasLocation" x="248.80000000000001" y="17.541229385307346"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Usj-SI-4FR">

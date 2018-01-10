@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0D177E647400C6723A70260F /* Pods_BitcoinTickerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7AE25564E879C1535EC898E /* Pods_BitcoinTickerUITests.framework */; };
+		17B015E42006B820001F229D /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B015E32006B820001F229D /* DashboardViewController.swift */; };
+		17B015E62006B9E0001F229D /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B015E52006B9E0001F229D /* DashboardTableViewCell.swift */; };
 		17BC526C200697D200B03B99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BC526B200697D200B03B99 /* AppDelegate.swift */; };
-		17BC526E200697D200B03B99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BC526D200697D200B03B99 /* ViewController.swift */; };
 		17BC5271200697D200B03B99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17BC526F200697D200B03B99 /* Main.storyboard */; };
 		17BC5273200697D200B03B99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17BC5272200697D200B03B99 /* Assets.xcassets */; };
 		17BC5276200697D200B03B99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17BC5274200697D200B03B99 /* LaunchScreen.storyboard */; };
@@ -39,9 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17B015E32006B820001F229D /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		17B015E52006B9E0001F229D /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		17BC5268200697D200B03B99 /* BitcoinTicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitcoinTicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17BC526B200697D200B03B99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		17BC526D200697D200B03B99 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		17BC5270200697D200B03B99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		17BC5272200697D200B03B99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17BC5275200697D200B03B99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -119,7 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				17BC526B200697D200B03B99 /* AppDelegate.swift */,
-				17BC526D200697D200B03B99 /* ViewController.swift */,
+				17B015E32006B820001F229D /* DashboardViewController.swift */,
+				17B015E52006B9E0001F229D /* DashboardTableViewCell.swift */,
 				17BC529920069A1B00B03B99 /* Coin.swift */,
 				17BC529B20069A3400B03B99 /* NetworkController.swift */,
 				17BC526F200697D200B03B99 /* Main.storyboard */,
@@ -466,8 +469,9 @@
 			files = (
 				17BC529C20069A3400B03B99 /* NetworkController.swift in Sources */,
 				17BC529A20069A1B00B03B99 /* Coin.swift in Sources */,
-				17BC526E200697D200B03B99 /* ViewController.swift in Sources */,
+				17B015E42006B820001F229D /* DashboardViewController.swift in Sources */,
 				17BC526C200697D200B03B99 /* AppDelegate.swift in Sources */,
+				17B015E62006B9E0001F229D /* DashboardTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

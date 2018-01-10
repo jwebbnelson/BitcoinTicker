@@ -16,6 +16,8 @@ class NetworkController {
     
     var coins: [Coin] = []
     
+    
+    // Request data from CoinMarketCap API
     func getCurrentCoinData(completion:@escaping() -> Void) {
         
         var coins:[Coin] = []
@@ -36,14 +38,7 @@ class NetworkController {
                 print("Coin dictionary response failure")
                 completion()
             }
-            
-            
-            
-            
-            
         }
-        
-        
     }
     
 }
