@@ -48,7 +48,7 @@ extension DashboardViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dashboardCell", for: indexPath) as! DashboardTableViewCell
         
         let post = networkController.coins[indexPath.row]
-        cell.textLabel?.text = post.name
+        
         return cell
     }
     
@@ -58,7 +58,9 @@ extension DashboardViewController: UITableViewDataSource {
 }
 
 extension DashboardViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 55
+    }
 }
 
 
