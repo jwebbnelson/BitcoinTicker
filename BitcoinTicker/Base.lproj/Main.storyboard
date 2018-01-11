@@ -50,17 +50,17 @@
                                                                         <constraint firstAttribute="width" constant="32" id="qxM-DB-vQL"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Qri-iw-cH5">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Qri-iw-cH5">
                                                                     <rect key="frame" x="42" y="0.0" width="273.5" height="32"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxZ-6U-ySh">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="273.5" height="16"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="273.5" height="16.5"/>
                                                                             <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="18"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zs8-Kr-HMV">
-                                                                            <rect key="frame" x="0.0" y="20" width="273.5" height="12"/>
+                                                                            <rect key="frame" x="0.0" y="19.5" width="273.5" height="12.5"/>
                                                                             <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="15"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -120,11 +120,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="CryptoTrack" id="diE-2D-ELj">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="cTp-lw-M8F"/>
+                    <navigationItem key="navigationItem" title="CryptoTrack" largeTitleDisplayMode="always" id="diE-2D-ELj">
+                        <barButtonItem key="leftBarButtonItem" title="24HR" id="cTp-lw-M8F">
+                            <connections>
+                                <action selector="timeFrameTapped:" destination="BYZ-38-t0r" id="gFD-oC-uUu"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="YcJ-mg-VoH" id="PrC-xZ-mEg"/>
+                        <outlet property="timeframeButton" destination="cTp-lw-M8F" id="3rP-HA-aPS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -139,6 +144,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HSn-6K-CDX">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -11,7 +11,9 @@ import UIKit
 class DashboardViewController: UIViewController {
 
     let networkController = NetworkController()
+    var timeframe:Timeframe = .day
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var timeframeButton: UIBarButtonItem!
     
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -37,14 +39,25 @@ class DashboardViewController: UIViewController {
         // Do some reloading of data and update the table view's data source
         // Fetch more objects from a web service, for example...
         
-        // Simply adding an object to the data source for this example
-//        let newMovie = Movie(title: "Serenity", genre: "Sci-fi")
-//        movies.append(newMovie)
-//
-//        movies.sort() { $0.title < $1.title }
-        
         self.tableView.reloadData()
         refreshControl.endRefreshing()
+    }
+    
+    // Reset timeframe and reload tableview
+    @IBAction func timeFrameTapped(_ sender: Any) {
+        switch self.timeframe {
+        case .hour:
+            self.timeframe = .day
+            self.timeframeButton.title = "24HR"
+        case .week:
+            self.timeframe = .hour
+            self.timeframeButton.title = "1HR"
+        default:
+             self.timeframe = .week
+            self.timeframeButton.title = "7D"
+        }
+        self.tableView.reloadData()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,7 +83,7 @@ extension DashboardViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dashboardCell", for: indexPath) as! DashboardTableViewCell
         
         let coin = networkController.coins[indexPath.row]
-        cell.updateCellWithInfo(coin: coin, timeframe: .day)
+        cell.updateCellWithInfo(coin: coin, timeframe: self.timeframe)
         return cell
     }
     
