@@ -13,6 +13,13 @@ class DashboardViewController: UIViewController {
     let networkController = NetworkController()
     @IBOutlet weak var tableView: UITableView!
     
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
+        
+        return refreshControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,8 +29,23 @@ class DashboardViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
+        
+        self.tableView.addSubview(self.refreshControl)
     }
 
+    @objc func handleRefresh(refreshControl: UIRefreshControl) {
+        // Do some reloading of data and update the table view's data source
+        // Fetch more objects from a web service, for example...
+        
+        // Simply adding an object to the data source for this example
+//        let newMovie = Movie(title: "Serenity", genre: "Sci-fi")
+//        movies.append(newMovie)
+//
+//        movies.sort() { $0.title < $1.title }
+        
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -47,8 +69,8 @@ extension DashboardViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dashboardCell", for: indexPath) as! DashboardTableViewCell
         
-        let post = networkController.coins[indexPath.row]
-        
+        let coin = networkController.coins[indexPath.row]
+        cell.updateCellWithInfo(coin: coin, timeframe: .day)
         return cell
     }
     

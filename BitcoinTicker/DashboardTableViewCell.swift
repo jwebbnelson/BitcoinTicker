@@ -20,6 +20,7 @@ class DashboardTableViewCell: UITableViewCell {
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var bottomLabel: UILabel!
+    @IBOutlet weak var topleftLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,7 +36,8 @@ class DashboardTableViewCell: UITableViewCell {
     
     func updateCellWithInfo (coin:Coin, timeframe:Timeframe) {
         largeNameLable.text = coin.symbol
-        topLabel.text = coin.priceUSD
+        topLabel.text = "$" + coin.priceUSD
+        topleftLabel.text = coin.name
         
         var percentChange = ""
         switch timeframe {
@@ -47,8 +49,12 @@ class DashboardTableViewCell: UITableViewCell {
             percentChange = coin.percentChangeDay
         }
         
-        bottomLabel.text = percentChange
-       
+        if percentChange.contains("-") {
+            bottomLabel.textColor = .red
+        } else {
+            bottomLabel.textColor = .green
+        }
+        bottomLabel.text = percentChange + "%"
     }
 
 }
